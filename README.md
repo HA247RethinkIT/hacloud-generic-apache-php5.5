@@ -13,6 +13,8 @@ At boot any environment variables (PHP_*) are written to /etc/php5/apache2/conf.
 
 Only names that start `PHP_` followed by a lowercase directive are used, e.g. `PHP_memory_limit=256M` or `PHP_session.upload_progress.enabled=0`.
 
+`session.upload_progress.enabled` defaults to `0` as a PHP2Shell (CVE-2026-109618 / CVE-2026-109619) mitigation. Set `PHP_session.upload_progress.enabled=1` only if a site genuinely needs upload progress.
+
 ### Docker Compose
 ```
 version: "3"
